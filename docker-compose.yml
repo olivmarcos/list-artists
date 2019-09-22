@@ -1,0 +1,37 @@
+version: '3'
+# services
+services:
+  
+  # Symfony service to provide api
+  php-crud:
+    container_name: php-crud
+    image: webdevops/php-nginx-dev:7.3
+    working_dir: /var/www/app
+    volumes:
+      - .:/var/www/app
+    environment:
+      - WEB_DOCUMENT_ROOT=/var/www/app/public
+      - WEB_DOCUMENT_INDEX=index.php
+      - PHP_MAX_EXECUTION_TIME=86400
+      - PHP_DEBUGGER=xdebug
+      - XDEBUG_REMOTE_PORT=9000
+      - XDEBUG_REMOTE_AUTOSTART=on
+      - XDEBUG_REMOTE_CONNECT_BACK=on
+#      - XDEBUG_REMOTE_HOST=${XDEBUG_REMOTE_HOST}
+    ports:
+      - 8080:80
+    links:
+      - mysql-crud
+
+  mysql-crud:
+    container_name: mysql-crud  
+    image: mysql:5.7
+    volumes:
+      - ./mysql:/var/lib/mysql
+    ports:
+      - '3306:3306'  
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=db_dev
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=123.456
