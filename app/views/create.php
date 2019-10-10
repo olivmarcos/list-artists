@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Insert</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     
 </head>
 
@@ -16,7 +16,7 @@
     <section>
         <h1>Insert</h1>
 
-        <form action="../crud/insert.php" method="POST">
+        <form action="insert.php" method="POST">
             <div>
                 <input type="text" name="name" placeholder="Name"><br>
                 <textarea rows="4" cols="50" name="bio" placeholder="Biography"></textarea><br>

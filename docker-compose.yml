@@ -13,10 +13,10 @@ services:
       - WEB_DOCUMENT_ROOT=/var/www/app/public
       - WEB_DOCUMENT_INDEX=index.php
       - PHP_MAX_EXECUTION_TIME=86400
-      - PHP_DEBUGGER=xdebug
-      - XDEBUG_REMOTE_PORT=9000
-      - XDEBUG_REMOTE_AUTOSTART=on
-      - XDEBUG_REMOTE_CONNECT_BACK=on
+      # - PHP_DEBUGGER=xdebug
+      # - XDEBUG_REMOTE_PORT=9000
+      # - XDEBUG_REMOTE_AUTOSTART=on
+      # - XDEBUG_REMOTE_CONNECT_BACK=on
 #      - XDEBUG_REMOTE_HOST=${XDEBUG_REMOTE_HOST}
     ports:
       - 8080:80

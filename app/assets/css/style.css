@@ -14,7 +14,8 @@ section {
 h1 {
     padding: 2rem;
     font-size: 2rem;
-    color: #d23669;
+    /* color: #d23669; */
+    color: blue;
 }
 
 input {
