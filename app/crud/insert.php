@@ -1,6 +1,6 @@
 <?php
 
-require_once('./database/connection.php');
+require_once('../database/insert.php');
 
     if($_POST)
         {
