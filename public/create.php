@@ -25,16 +25,11 @@
     </section>
 
     <?php
-
-        $host = "mysql-crud";
-        $db_name = "db_dev";
-        $username = "user";
-        $password = "123.456";
+        include('database.php');
 
         if($_POST)
         {
             try {
-                $con = new PDO("mysql:host={$host};dbname={$db_name}", $username, $password);
 
                 $sql = "INSERT INTO TBL_ARTISTS(art_name, art_bio)
                         VALUES (:name, :bio)";
