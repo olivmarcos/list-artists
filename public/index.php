@@ -1,3 +1,3 @@
 <?php
-    require_once("artists.php");
+    require_once("read.php");
 ?>
