@@ -1,0 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Montserrat,sans-serif;
+}
+
+body {
+    color: rgba(255, 255, 255, 0.86);
+    background-color: rgb(35, 33, 41);
+}
+
+h1 {
+    color: rgb(255, 167, 196);
+    padding: 1rem;
+}
+
+h3 {
+    color: rgb(255, 167, 196);
+    padding-bottom: 1rem;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+}
+
+.artists {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin-bottom: 1rem;
+    /* box-shadow: 5px 5px 5px #ccc; */
+    padding: .5rem;
+}
+
+img {
+    width: 38rem;
+}
+.bio {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}

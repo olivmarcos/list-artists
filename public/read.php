@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Artists</title>
+    <link rel="stylesheet" href="artists.css">
 </head>
 <body>
     <div class="container">
@@ -19,9 +20,18 @@
             
             if ( $stmt->execute() ) {
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                    echo    "Nome: {$row['art_name']} <br>
-                            Biografia: {$row['art_bio']} <br>";
-                    echo "<img src='/images/{$row['art_img']}'>";
+                    echo    "<div id='container'>
+                                <div class='artists'>
+                                    <h1> {$row['art_name']} </h1><br>
+
+                                    <div class='img'>
+                                        <img src='/images/{$row['art_img']}' ><br>
+                                    </div> <br>
+                                    <div class='bio'>
+                                        <h3>Biografia:</h3> <p>{$row['art_bio']}</p> <br>
+                                    </div>
+                                </div>
+                            </div>";
                 }
             }
             else

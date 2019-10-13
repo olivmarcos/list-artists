@@ -18,6 +18,7 @@
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
             <div>
                 <input type="text" name="name" placeholder="Name"><br>
+                <input type="text" name="img" placeholder="Foto"><br>
                 <textarea rows="4" cols="50" name="bio" placeholder="Biography"></textarea><br>
                 <button type="submit" class="btn1">Insert</button>
             </div>
@@ -31,16 +32,18 @@
         {
             try {
 
-                $sql = "INSERT INTO TBL_ARTISTS(art_name, art_bio)
-                        VALUES (:name, :bio)";
+                $sql = "INSERT INTO TBL_ARTISTS(art_name, art_bio, art_img)
+                        VALUES (:name, :bio, :img)";
                 
                 $stmt = $con->prepare($sql);
                 
                 $name = htmlspecialchars(strip_tags($_POST['name']));
                 $bio = htmlspecialchars(strip_tags($_POST['bio']));
+                $img = htmlspecialchars(strip_tags($_POST['img']));
 
                 $stmt->bindParam(':name', $name);
                 $stmt->bindParam(':bio', $bio);
+                $stmt->bindParam(':img', $img);
     
                 if ($stmt->execute()) {
                     echo '<div class="alert-success">Record ws saved</div>';
